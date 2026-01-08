@@ -7,14 +7,9 @@ class Solution:
             for j in range(1, m + 1):
                 product = nums1[i-1] * nums2[j-1]
                 
-                # Always consider starting fresh with this product
-                dp[i][j] = product
-                
-                # Extend from previous best
+                dp[i][j] = product  # Start fresh
                 if dp[i-1][j-1] != float('-inf'):
                     dp[i][j] = max(dp[i][j], dp[i-1][j-1] + product)
-                
-                # Carry forward best from left or top
                 if i > 1:
                     dp[i][j] = max(dp[i][j], dp[i-1][j])
                 if j > 1:
