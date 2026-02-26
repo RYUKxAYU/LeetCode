@@ -16,5 +16,5 @@ class Solution:
             slow=gnn(slow)
             fast=gnn(gnn(fast))
         
-        return slow==1
+        return fast==1
         
